@@ -1,9 +1,7 @@
 import * as Sequelize from "sequelize";
 
 
-const POSTGRES_CONNECTION_STRING = process.env.POSTGRES_CONNECTION_STRING ;
-    
-
+const POSTGRES_CONNECTION_STRING = process.env.POSTGRES_CONNECTION_STRING ||  "postgres://postgres:password@localhost:6432/postgres";
 
 export async function getRestaurant(nearby: {
     lat: number,
