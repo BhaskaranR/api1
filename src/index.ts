@@ -45,6 +45,6 @@ app.use('/graphiql', graphiqlExpress({
     subscriptionsEndpoint: 'ws://localhost:3000/subscriptions',
   }));
 
-app.listen(8081, function () {
+app.listen(process.env.PORT || 8081, function () {
     console.log("server listening on port 8081");
 });
