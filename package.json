@@ -4,10 +4,11 @@
   "description": "",
   "main": "/dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "postinstall": "npm run build",
+    "copy-schemas": "$(npm bin)/cpx src/**/*.graphql dist/schemas",
+    "build": "tsc && npm run copy-schemas",
+    "postinstall": "npm run build ",
     "deploy": "npm run build && serverless deploy",
-    "start": "node --inspect -r ts-node/register ./src/index.ts",
+    "start": "node ./dist/index.js",
     "dev": "./node_modules/nodemon/bin/nodemon.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
     "apollo-server-express": "^2.3.1",
     "body-parser": "^1.18.3",
     "config": "^1.28.1",
+    "cpx": "^1.5.0",
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.0.2",
