@@ -1,0 +1,34 @@
+
+type Coordinates {
+    latitude: Float!
+    longitude: Float!
+}
+
+type Restaurant {
+    restaurant_id: Int!
+    yelp_id: Int
+    owner: String
+    name: String
+    description: String
+    phone: String
+    latitude: Float
+    longitude: Float
+    location: Coordinates
+    address: String
+    logo: String
+    rating: Int
+    timeofoperation: String
+    isactive: String
+    distance: Float
+}
+
+
+input GetNearByInput {
+    lat: Float!
+    long: Float!
+    radius: Int!
+}
+
+type Query {
+    getRestaurantsNearby(nearby: GetNearByInput): [Restaurant] 
+}

@@ -1,0 +1,10 @@
+{
+    "ignore": ["**/*.test.ts", "**/*.spec.ts", ".git", "node_modules"],
+    "watch": ["./src"],
+    "verbose": false,
+	"debug": true,
+    "exec": "npm start",
+    "ext": "ts, gql",
+    "inspect": true
+
+}
