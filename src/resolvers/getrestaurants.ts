@@ -17,7 +17,9 @@ export default {
             nearby: {
                 lat: number,
                 long: number,
-                radius: number
+                radius: number,
+                cuisine: string
+                timeofoperation: string
             }
         }) => {
             try {

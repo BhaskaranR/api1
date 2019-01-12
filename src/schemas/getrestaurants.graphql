@@ -27,6 +27,8 @@ input GetNearByInput {
     lat: Float!
     long: Float!
     radius: Int!
+    cuisine: String!
+    timeofoperation: String!
 }
 
 type Query {
